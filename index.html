@@ -16,6 +16,9 @@
 </head>
 <body>
   <header>
+    <div class="lang-switch">
+  <button id="langBtn">عربي</button>
+    </div>
     <div class="intro">
       <h1>Hi, I'm <span>Anas</span></h1>
       <p>Welcome to my personal website</p>
@@ -65,5 +68,62 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script>
+  const langBtn = document.getElementById("langBtn");
+  let isArabic = false;
+
+  const content = {
+    en: {
+      intro: "Hi, I'm <span>Anas</span>",
+      welcome: "Welcome to my personal website",
+      aboutTitle: "About Me",
+      aboutText: "Hello! I'm Anas, a web enthusiast who loves design and creativity.",
+      services: "Services",
+      service1: "Web Development",
+      service1Text: "I build responsive and modern websites.",
+      service2: "Design",
+      service2Text: "Clean and elegant designs for your projects.",
+      service3: "Responsive",
+      service3Text: "Websites that look great on all devices.",
+      contact: "Contact",
+      contactText: "You can reach me through my social media links above."
+    },
+    ar: {
+      intro: "مرحباً، أنا <span>أنس</span>",
+      welcome: "أهلاً بك في موقعي الشخصي",
+      aboutTitle: "من أنا",
+      aboutText: "أنا أنس، شغوف بالويب وأحب التصميم والإبداع.",
+      services: "خدماتي",
+      service1: "تطوير مواقع",
+      service1Text: "أقوم ببناء مواقع عصرية وسريعة الاستجابة.",
+      service2: "تصميم",
+      service2Text: "تصاميم أنيقة وبسيطة لمشاريعك.",
+      service3: "متجاوبة",
+      service3Text: "مواقع تعمل بشكل ممتاز على جميع الأجهزة.",
+      contact: "تواصل",
+      contactText: "يمكنك التواصل معي عبر روابط التواصل أعلاه."
+    }
+  };
+
+  langBtn.addEventListener("click", () => {
+    isArabic = !isArabic;
+    const lang = isArabic ? "ar" : "en";
+    langBtn.textContent = isArabic ? "English" : "عربي";
+
+    document.querySelector(".intro h1").innerHTML = content[lang].intro;
+    document.querySelector(".intro p").textContent = content[lang].welcome;
+    document.querySelector("#about h2").textContent = content[lang].aboutTitle;
+    document.querySelector("#about p").textContent = content[lang].aboutText;
+    document.querySelector("#services h2").textContent = content[lang].services;
+    document.querySelectorAll("#services .card h3")[0].textContent = content[lang].service1;
+    document.querySelectorAll("#services .card p")[0].textContent = content[lang].service1Text;
+    document.querySelectorAll("#services .card h3")[1].textContent = content[lang].service2;
+    document.querySelectorAll("#services .card p")[1].textContent = content[lang].service2Text;
+    document.querySelectorAll("#services .card h3")[2].textContent = content[lang].service3;
+    document.querySelectorAll("#services .card p")[2].textContent = content[lang].service3Text;
+    document.querySelector("#contact h2").textContent = content[lang].contact;
+    document.querySelector("#contact p").textContent = content[lang].contactText;
+  });
+        </script>
 </body>
 </html>
