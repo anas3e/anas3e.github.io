@@ -69,57 +69,42 @@
     عذراً، الميزة غير متوفرة حالياً. سأعمل على تطويرها.
   </div>
 
-  <!-- سكريبتات التحكم -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuBtn = document.getElementById("menuBtn");
-      const sidebar = document.getElementById("sidebar");
-      const closeBtn = document.getElementById("closeBtn");
-
-      menuBtn.addEventListener("click", () => { sidebar.style.width = "250px"; });
-      closeBtn.addEventListener("click", () => { sidebar.style.width = "0"; });
-
-      document.querySelectorAll(".sidebar a").forEach(link => {
-        link.addEventListener("click", () => { sidebar.style.width = "0"; });
-      });
-
-      // زر الترجمة القديم (يغير النص فقط)
-      const langBtn = document.getElementById("langBtn");
-      let isArabic = true;
-      langBtn.addEventListener("click", () => {
-        isArabic = !isArabic;
-        langBtn.textContent = isArabic ? "عربي" : "English";
-      });
-    });
-
-    // نافذة الترجمة المنبثقة
-    const langBtn = document.getElementById("langBtn");
-    langBtn.addEventListener("click", () => {
-      const toast = document.getElementById("translation-toast");
-      toast.classList.add("show");
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 3000);
-    });
-  </script>
-  <!-- كل محتوى الموقع هنا -->
-
   <!-- نافذة الترحيب الخاصة بك -->
   <div id="custom-banner" class="custom-banner">
     الحمد لله الذي بنعمته تتم الصالحات<br>
     بفضل الله وبفضل جهودي ومساعدة <span class="highlight">ChatGPT</span> للامانة استطعت برمجة أول موقع إلكتروني خاص بي
   </div>
 
-  <!-- سكربت التحكم بالنافذة -->
+  <!-- سكريبتات التحكم -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const banner = document.getElementById("custom-banner");
-      banner.classList.add("show"); // عرض النافذة
+      // القائمة الجانبية
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("sidebar");
+      const closeBtn = document.getElementById("closeBtn");
 
-      // اختفاء النافذة بعد 30 ثانية
-      setTimeout(() => {
-        banner.classList.remove("show");
-      }, 30000);
+      menuBtn.addEventListener("click", () => { sidebar.style.width = "250px"; });
+      closeBtn.addEventListener("click", () => { sidebar.style.width = "0"; });
+      document.querySelectorAll(".sidebar a").forEach(link => {
+        link.addEventListener("click", () => { sidebar.style.width = "0"; });
+      });
+
+      // زر الترجمة + نافذة الترجمة المنبثقة
+      const langBtn = document.getElementById("langBtn");
+      let isArabic = true;
+      langBtn.addEventListener("click", () => {
+        isArabic = !isArabic;
+        langBtn.textContent = isArabic ? "عربي" : "English";
+
+        const toast = document.getElementById("translation-toast");
+        toast.classList.add("show");
+        setTimeout(() => { toast.classList.remove("show"); }, 3000);
+      });
+
+      // نافذة الترحيب
+      const banner = document.getElementById("custom-banner");
+      banner.classList.add("show");
+      setTimeout(() => { banner.classList.remove("show"); }, 30000);
     });
   </script>
 
