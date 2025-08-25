@@ -115,3 +115,59 @@ footer {
   transform: scale(1.1) rotate(-2deg);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 } 
+/* زر القائمة */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px; /* عكس زر الترجمة */
+  z-index: 1000;
+  font-size: 25px;
+  background: #333;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: #555;
+  transform: scale(1.1);
+}
+
+/* القائمة الجانبية */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 999;
+}
+
+.sidebar a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #f1f1f1;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background: #575757;
+  padding-left: 35px;
+}
+
+/* زر الإغلاق */
+.sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
