@@ -3,41 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعي الشخصي</title>
+  <title>موقعي الشخصي - أنس</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(120deg, #0f172a, #1e293b);
+      background-color: #111827;
       color: #f1f5f9;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 50px 20px;
     }
-    h1 { font-size: 3em; margin-bottom: 0.3em; }
-    p { color: #94a3b8; font-size: 1.2em; margin-bottom: 2em; }
-    .btn {
+    header {
+      padding: 60px 20px;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    p {
+      font-size: 1.2em;
+      color: #94a3b8;
+    }
+    .social {
+      margin: 30px 0;
+    }
+    .social a {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      border-radius: 10px;
+      margin: 0 10px;
+      font-size: 28px;
       text-decoration: none;
-      font-weight: bold;
+      color: #22d3ee;
       transition: 0.3s;
     }
-    .btn.primary { background: #22d3ee; color: #0f172a; }
-    .btn.secondary { border: 2px solid #22d3ee; color: #22d3ee; }
-    .btn:hover { opacity: 0.85; }
-    footer { margin-top: 50px; font-size: 0.9em; color: #64748b; }
+    .social a:hover {
+      color: #38bdf8;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #64748b;
+    }
   </style>
+  <!-- أيقونات font awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>👋 مرحباً، أنا أنس</h1>
-  <p>مطور واجهات مبتدئ أحب بناء مواقع بسيطة وجميلة.</p>
+  <header>
+    <h1>👋 مرحباً، أنا أنس</h1>
+    <p>أهلاً بك في موقعي الشخصي</p>
+  </header>
 
-  <a class="btn primary" href="https://github.com/anas3e">GitHub</a>
-  <a class="btn secondary" href="mailto:your.email@example.com">تواصل معي</a>
+  <div class="social">
+    <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="I'm on Instagram as @an0_0as31. Install the app to follow my photos and videos. https://www.instagram.com/an0_0as31?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
 
-  <footer>© <span id="year"></span> أنس - جميع الحقوق محفوظة</footer>
+  <section>
+    <h2>✨ نبذة عني</h2>
+    <p>أنا أنس، مطوّر واجهات بسيطة ومهتم بإنشاء مواقع شخصية أنيقة.</p>
+  </section>
+
+  <section>
+    <h2>📂 مشاريعي</h2>
+    <p>هنا أضع بعض المشاريع والتجارب التي أعمل عليها.</p>
+  </section>
+
+  <section>
+    <h2>📬 تواصل معي</h2>
+    <p>يمكنك مراسلتي عبر روابط التواصل أعلاه.</p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> أنس - جميع الحقوق محفوظة
+  </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
