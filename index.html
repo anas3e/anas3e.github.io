@@ -1,9 +1,9 @@
-!DOCTTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> anas com</title>
+  <title>anas.com</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -64,6 +64,12 @@
     </div>
   </footer>
 
+  <!-- نافذة الترجمة المنبثقة -->
+  <div id="translation-toast" class="toast">
+    عذراً، الميزة غير متوفرة حالياً. سأعمل على تطويرها.
+  </div>
+
+  <!-- سكريبتات التحكم -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const menuBtn = document.getElementById("menuBtn");
@@ -77,7 +83,7 @@
         link.addEventListener("click", () => { sidebar.style.width = "0"; });
       });
 
-      // زر الترجمة
+      // زر الترجمة القديم (يغير النص فقط)
       const langBtn = document.getElementById("langBtn");
       let isArabic = true;
       langBtn.addEventListener("click", () => {
@@ -85,32 +91,17 @@
         langBtn.textContent = isArabic ? "عربي" : "English";
       });
     });
+
+    // نافذة الترجمة المنبثقة
+    const langBtn = document.getElementById("langBtn");
+    langBtn.addEventListener("click", () => {
+      const toast = document.getElementById("translation-toast");
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    });
   </script>
-  <script>
-  const langBtn = document.getElementById("langBtn");
 
-  langBtn.addEventListener("click", () => {
-    const toast = document.getElementById("translation-toast");
-    toast.classList.add("show");
-
-    setTimeout(() => {
-      toast.classList.remove("show");
-    }, 3000);
-  });
-</script>
-</body>
-</html>
-
-  <!-- باقي محتوى الصفحة -->
-
-<!-- نافذة الترجمة المنبثقة -->
-<div id="translation-toast" class="toast">
-  
- عذراً، الميزة غير متوفرة حالياً. سأعمل على تطويرها.
-  anas. 
-</div>
-
-</body>
-</html>
 </body>
 </html>
