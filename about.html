@@ -6,21 +6,38 @@
   <title>About Anas</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- زر القائمة -->
+  <div class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></div>
+
+  <!-- القائمة الجانبية -->
+  <div class="sidebar" id="sidebar">
+    <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="about.html"><i class="fas fa-user"></i> About Me</a>
+    <a href="index.html#skills"><i class="fas fa-pen-nib"></i> My Skills</a>
+    <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+    <a href="https://www.instagram.com/an0_0as31?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+  </div>
+
   <header>
     <h1>About Me</h1>
   </header>
 
   <section id="about-info">
     <h2>My Story</h2>
-    <p><!-- هنا تكتب معلوماتك الشخصية عن نفسك --></p>
+    <p><i class="fas fa-pen writing"></i> soon...</p>
 
     <h2>Experience</h2>
-    <p><!-- هنا تكتب خبراتك العملية أو المشاريع التي عملت عليها --></p>
+    <p><i class="fas fa-pen writing"></i> soon...</p>
 
     <h2>Education</h2>
-    <p><!-- هنا تكتب تعليمك أو شهاداتك --></p>
+    <p><i class="fas fa-pen writing"></i> soon...</p>
   </section>
 
   <footer>
@@ -29,6 +46,12 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebar = document.getElementById("sidebar");
+    const closeBtn = document.getElementById("closeBtn");
+    menuBtn.onclick = () => sidebar.style.width = "280px";
+    closeBtn.onclick = () => sidebar.style.width = "0";
+    window.onclick = (event) => { if(event.target == sidebar) sidebar.style.width = "0"; };
   </script>
 </body>
 </html>
