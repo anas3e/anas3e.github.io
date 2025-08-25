@@ -1,85 +1,65 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعي الشخصي - أنس</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #111827;
-      color: #f1f5f9;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      padding: 60px 20px;
-    }
-    h1 {
-      font-size: 3em;
-      margin: 0;
-    }
-    p {
-      font-size: 1.2em;
-      color: #94a3b8;
-    }
-    .social {
-      margin: 30px 0;
-    }
-    .social a {
-      display: inline-block;
-      margin: 0 10px;
-      font-size: 28px;
-      text-decoration: none;
-      color: #22d3ee;
-      transition: 0.3s;
-    }
-    .social a:hover {
-      color: #38bdf8;
-    }
-    section {
-      padding: 40px 20px;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #64748b;
-    }
-  </style>
-  <!-- أيقونات font awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Anas - Personal Website</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>👋 مرحباً، أنا أنس</h1>
-    <p>أهلاً بك في موقعي الشخصي</p>
+    <div class="intro">
+      <h1>Hi, I'm <span>Anas</span></h1>
+      <p>Welcome to my personal website</p>
+      <div class="social">
+        <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/an0_0as31?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
   </header>
 
-  <div class="social">
-    <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="I'm on Instagram as @an0_0as31. Install the app to follow my photos and videos. https://www.instagram.com/an0_0as31?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i></a>
-  </div>
-
-  <section>
-    <h2>✨ نبذة عني</h2>
-    <p>أنا أنس، مطوّر واجهات بسيطة ومهتم بإنشاء مواقع شخصية أنيقة.</p>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Anas, a web enthusiast who loves design and creativity.</p>
   </section>
 
-  <section>
-    <h2>📂 مشاريعي</h2>
-    <p>هنا أضع بعض المشاريع والتجارب التي أعمل عليها.</p>
+  <section id="services">
+    <h2>Services</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>I build responsive and modern websites.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Design</h3>
+        <p>Clean and elegant designs for your projects.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Responsive</h3>
+        <p>Websites that look great on all devices.</p>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>📬 تواصل معي</h2>
-    <p>يمكنك مراسلتي عبر روابط التواصل أعلاه.</p>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me through my social media links above.</p>
   </section>
 
   <footer>
-    © <span id="year"></span> أنس - جميع الحقوق محفوظة
+    <p>© <span id="year"></span> Anas - All Rights Reserved</p>
   </footer>
 
   <script>
