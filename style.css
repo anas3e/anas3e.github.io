@@ -185,3 +185,19 @@ footer a {
 footer a:hover {
   color: #22d3ee;
 }
+.about .pen {
+  font-size: 36px;          /* حجم القلم */
+  margin-left: 10px;        /* مسافة عن كلمة soon */
+  display: inline-block;
+  animation: writing 1s infinite alternate; /* حركة يمين ↔ يسار */
+}
+
+@keyframes writing {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(10px); }
+}
+
+.about p {
+  font-size: 1.5em;
+  font-weight: 600;
+} 
