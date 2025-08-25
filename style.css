@@ -1,27 +1,31 @@
-/* ========== الخطوط العامة ========== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-body {
+/* === RESET === */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  background: #f5f5f5;
-  color: #222;
 }
 
-/* ========== القائمة الجانبية ========== */
+body {
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+  line-height: 1.6;
+}
+
+/* === القائمة الجانبية === */
 .sidebar {
   height: 100%;
   width: 0;
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(30, 30, 30, 0.95);
+  background: rgba(30,30,30,0.95);
   overflow-x: hidden;
   transition: 0.4s ease-in-out;
   padding-top: 60px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 0 20px rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
   z-index: 1000;
 }
@@ -51,7 +55,7 @@ body {
 
 /* زر القائمة */
 #menuBtn {
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
   padding: 10px 15px;
   background: #222;
@@ -61,7 +65,33 @@ body {
   margin: 15px;
 }
 
-/* ========== الهيدر ========== */
+/* زر الترجمة */
+.lang-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.lang-switch button {
+  background: #ff4757;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.lang-switch button:hover {
+  background: #3742fa;
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* === الهيدر === */
 header {
   text-align: center;
   padding: 60px 20px 40px;
@@ -69,16 +99,14 @@ header {
 
 header h1 {
   font-size: 36px;
-  margin: 0;
-  color: #222;
 }
 
 header p {
   font-size: 18px;
-  color: #555;
+  color: #ccc;
 }
 
-/* ========== قسم المهارات ========== */
+/* === قسم المهارات === */
 .skills {
   display: flex;
   justify-content: center;
@@ -88,9 +116,9 @@ header p {
 }
 
 .skill-card {
-  background: #fff;
+  background: #1e293b;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   padding: 25px;
   width: 250px;
   text-align: center;
@@ -101,18 +129,23 @@ header p {
   transform: translateY(-8px);
 }
 
-.skill-card img {
-  width: 80px;
+.skill-card i {
+  font-size: 40px;
   margin-bottom: 15px;
+  color: #22d3ee;
 }
 
 .skill-card h3 {
   margin: 10px 0;
   font-size: 20px;
-  color: #333;
 }
 
-/* ========== about page ========== */
+.skill-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* === about page === */
 .about {
   text-align: center;
   padding: 100px 20px;
@@ -120,10 +153,10 @@ header p {
 
 .about h2 {
   font-size: 30px;
-  color: #333;
+  margin-bottom: 20px;
 }
 
-.pencil {
+.about .pen {
   font-size: 40px;
   animation: writing 1s infinite alternate;
 }
@@ -133,22 +166,22 @@ header p {
   to { transform: translateX(10px); }
 }
 
-/* ========== الفوتر ========== */
+/* === الفوتر === */
 footer {
   text-align: center;
   padding: 20px;
-  background: #222;
+  background: #0f172a;
   color: #fff;
   margin-top: 50px;
 }
 
 footer a {
   color: #fff;
-  margin: 0 10px;
-  font-size: 20px;
+  margin: 0 12px;
+  font-size: 22px;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #f39c12;
+  color: #22d3ee;
 }
