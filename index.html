@@ -1,90 +1,166 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعي الشخصي</title>
+  <title>Anas - Personal Website</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
   <!-- زر القائمة -->
-  <button id="menuBtn">☰</button>
-
-  <!-- زر الترجمة -->
-  <div class="lang-switch">
-    <button id="langBtn">عربي</button>
+  <div class="menu-btn" id="menuBtn">
+    <i class="fas fa-bars"></i>
   </div>
 
   <!-- القائمة الجانبية -->
-  <div id="sidebar" class="sidebar">
-    <span id="closeBtn" class="closebtn">&times;</span>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">عنّي</a>
-    <a href="#skills">مهاراتي</a>
-    <hr style="margin:20px 0; border-color:#555;">
-    <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
-    <a href="https://www.instagram.com/an0_0as31" target="_blank"><i class="fab fa-instagram"></i> انستغرام</a>
-    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i> يوتيوب</a>
+  <div class="sidebar" id="sidebar">
+    <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+    <a href="index.html#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <!-- الهيدر -->
   <header>
-    <h1>أهلاً بكم في موقعي</h1>
-    <p>مصمم و محرر صور محترف</p>
+    <div class="lang-switch">
+      <button id="langBtn">عربي</button>
+    </div>
+    <div class="intro">
+      <h1>Hi, I'm <span>Anas</span></h1>
+      <p>Welcome to my personal website</p>
+      <div class="social">
+        <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/an0_0as31" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
   </header>
 
-  <!-- قسم المهارات -->
-  <section id="skills" class="skills">
-    <div class="skill-card">
-      <i class="fa-solid fa-wand-magic-sparkles"></i>
-      <h3>Retouching</h3>
-      <p>تعديل الصور باحترافية</p>
-    </div>
-    <div class="skill-card">
-      <i class="fa-solid fa-scissors"></i>
-      <h3>Editing</h3>
-      <p>مونتاج وتحرير</p>
-    </div>
-    <div class="skill-card">
-      <i class="fa-solid fa-pen-nib"></i>
-      <h3>Creative Design</h3>
-      <p>تصاميم إبداعية</p>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Anas, a web enthusiast who loves design and creativity.</p>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>I build responsive and modern websites.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Design</h3>
+        <p>Clean and elegant designs for your projects.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Responsive</h3>
+        <p>Websites that look great on all devices.</p>
+      </div>
     </div>
   </section>
 
-  <!-- الفوتر -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me through my social media links above.</p>
+  </section>
+
   <footer>
-    <p>تابعني على:</p>
-    <div>
-      <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/an0_0as31" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i></a>
-    </div>
+    <p>© <span id="year"></span> Anas - All Rights Reserved</p>
   </footer>
 
+  <!-- تحديث السنة -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuBtn = document.getElementById("menuBtn");
-      const sidebar = document.getElementById("sidebar");
-      const closeBtn = document.getElementById("closeBtn");
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-      menuBtn.addEventListener("click", () => { sidebar.style.width = "250px"; });
-      closeBtn.addEventListener("click", () => { sidebar.style.width = "0"; });
+  <!-- كود الترجمة -->
+  <script>
+    const content = {
+      en: {
+        intro: "Hi, I'm <span>Anas</span>",
+        welcome: "Welcome to my personal website",
+        aboutTitle: "About Me",
+        aboutText: "Hello! I'm Anas, a web enthusiast who loves design and creativity.",
+        services: "Services",
+        service1: "Web Development",
+        service1Text: "I build responsive and modern websites.",
+        service2: "Design",
+        service2Text: "Clean and elegant designs for your projects.",
+        service3: "Responsive",
+        service3Text: "Websites that look great on all devices.",
+        contact: "Contact",
+        contactText: "You can reach me through my social media links above."
+      },
+      ar: {
+        intro: "مرحباً، أنا <span>أنس</span>",
+        welcome: "أهلاً بك في موقعي الشخصي",
+        aboutTitle: "من أنا",
+        aboutText: "أنا أنس، شغوف بالويب وأحب التصميم والإبداع.",
+        services: "خدماتي",
+        service1: "تطوير مواقع",
+        service1Text: "أقوم ببناء مواقع عصرية وسريعة الاستجابة.",
+        service2: "تصميم",
+        service2Text: "تصاميم أنيقة وبسيطة لمشاريعك.",
+        service3: "متجاوبة",
+        service3Text: "مواقع تعمل بشكل ممتاز على جميع الأجهزة.",
+        contact: "تواصل",
+        contactText: "يمكنك التواصل معي عبر روابط التواصل أعلاه."
+      }
+    };
 
-      document.querySelectorAll(".sidebar a").forEach(link => {
-        link.addEventListener("click", () => { sidebar.style.width = "0"; });
-      });
+    const langBtn = document.getElementById("langBtn");
+    let isArabic = true;
 
-      // زر الترجمة
-      const langBtn = document.getElementById("langBtn");
-      let isArabic = true;
-      langBtn.addEventListener("click", () => {
-        isArabic = !isArabic;
-        langBtn.textContent = isArabic ? "عربي" : "English";
-      });
+    langBtn.addEventListener("click", () => {
+      isArabic = !isArabic;
+      const lang = isArabic ? "ar" : "en";
+      langBtn.textContent = isArabic ? "عربي" : "English";
+
+      document.querySelector(".intro h1").innerHTML = content[lang].intro;
+      document.querySelector(".intro p").textContent = content[lang].welcome;
+      document.querySelector("#about h2").textContent = content[lang].aboutTitle;
+      document.querySelector("#about p").textContent = content[lang].aboutText;
+      document.querySelector("#services h2").textContent = content[lang].services;
+      document.querySelectorAll("#services .card h3")[0].textContent = content[lang].service1;
+      document.querySelectorAll("#services .card p")[0].textContent = content[lang].service1Text;
+      document.querySelectorAll("#services .card h3")[1].textContent = content[lang].service2;
+      document.querySelectorAll("#services .card p")[1].textContent = content[lang].service2Text;
+      document.querySelectorAll("#services .card h3")[2].textContent = content[lang].service3;
+      document.querySelectorAll("#services .card p")[2].textContent = content[lang].service3Text;
+      document.querySelector("#contact h2").textContent = content[lang].contact;
+      document.querySelector("#contact p").textContent = content[lang].contactText;
     });
+  </script>
+
+  <!-- كود القائمة الجانبية -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebar = document.getElementById("sidebar");
+    const closeBtn = document.getElementById("closeBtn");
+
+    menuBtn.onclick = function() {
+      sidebar.style.width = "250px";
+    }
+
+    closeBtn.onclick = function() {
+      sidebar.style.width = "0";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == sidebar) {
+        sidebar.style.width = "0";
+      }
+    }
   </script>
 </body>
 </html>
