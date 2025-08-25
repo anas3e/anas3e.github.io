@@ -86,6 +86,21 @@
       });
     });
   </script>
+  <script>
+  const langBtn = document.getElementById("langBtn");
+
+  langBtn.addEventListener("click", () => {
+    const toast = document.getElementById("translation-toast");
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3000);
+  });
+</script>
+</body>
+</html>
+
   <!-- باقي محتوى الصفحة -->
 
 <!-- نافذة الترجمة المنبثقة -->
