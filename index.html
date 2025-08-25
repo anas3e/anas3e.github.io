@@ -1,76 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>موقعي الشخصي</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Sidebar -->
-  <div id="sidebar" class="sidebar">
-    <span id="closeBtn" class="closebtn">&times;</span>
-    <a href="index.html">🏠 Home</a>
-    <a href="about.html">👤 About</a>
-    <a href="#skills">💡 Skills</a>
-    <a href="https://www.facebook.com/an.as.182828" target="_blank">📘 Facebook</a>
-    <a href="https://www.instagram.com/an0_0as31?igsh=YzljYTk1ODg3Zg==" target="_blank">📸 Instagram</a>
-    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank">▶️ YouTube</a>
+
+  <!-- زر القائمة -->
+  <button id="menuBtn">☰</button>
+
+  <!-- زر الترجمة -->
+  <div class="lang-switch">
+    <button id="langBtn">عربي</button>
   </div>
 
-  <!-- Menu button -->
-  <span id="menuBtn">&#9776; Menu</span>
+  <!-- القائمة الجانبية -->
+  <div id="sidebar" class="sidebar">
+    <span id="closeBtn" class="closebtn">&times;</span>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">عنّي</a>
+    <a href="#skills">مهاراتي</a>
+    <hr style="margin:20px 0; border-color:#555;">
+    <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
+    <a href="https://www.instagram.com/an0_0as31" target="_blank"><i class="fab fa-instagram"></i> انستغرام</a>
+    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i> يوتيوب</a>
+  </div>
 
-  <!-- Header -->
-  <header class="header">
-    <h1>Welcome to My Portfolio</h1>
-    <p>Creative Designer & Retoucher</p>
+  <!-- الهيدر -->
+  <header>
+    <h1>أهلاً بكم في موقعي</h1>
+    <p>مصمم و محرر صور محترف</p>
   </header>
 
-  <!-- Skills Section -->
+  <!-- قسم المهارات -->
   <section id="skills" class="skills">
     <div class="skill-card">
-      <img src="images/retouching.png" alt="Retouching">
-      <h3>Photo Retouching</h3>
-      <p>Professional image editing and color correction.</p>
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      <h3>Retouching</h3>
+      <p>تعديل الصور باحترافية</p>
     </div>
     <div class="skill-card">
-      <img src="images/design.png" alt="Creative Design">
+      <i class="fa-solid fa-scissors"></i>
+      <h3>Editing</h3>
+      <p>مونتاج وتحرير</p>
+    </div>
+    <div class="skill-card">
+      <i class="fa-solid fa-pen-nib"></i>
       <h3>Creative Design</h3>
-      <p>Modern and aesthetic designs tailored to your needs.</p>
-    </div>
-    <div class="skill-card">
-      <img src="images/editing.png" alt="Video Editing">
-      <h3>Video Editing</h3>
-      <p>Engaging edits with smooth transitions.</p>
+      <p>تصاميم إبداعية</p>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- الفوتر -->
   <footer>
-    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    <p>تابعني على:</p>
+    <div>
+      <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/an0_0as31" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const menuBtn = document.getElementById("menuBtn");
       const sidebar = document.getElementById("sidebar");
       const closeBtn = document.getElementById("closeBtn");
 
-      menuBtn.addEventListener("click", () => {
-        sidebar.style.width = "250px";
-      });
+      menuBtn.addEventListener("click", () => { sidebar.style.width = "250px"; });
+      closeBtn.addEventListener("click", () => { sidebar.style.width = "0"; });
 
-      closeBtn.addEventListener("click", () => {
-        sidebar.style.width = "0";
-      });
-
-      // Close when clicking any link
       document.querySelectorAll(".sidebar a").forEach(link => {
-        link.addEventListener("click", () => {
-          sidebar.style.width = "0";
-        });
+        link.addEventListener("click", () => { sidebar.style.width = "0"; });
+      });
+
+      // زر الترجمة
+      const langBtn = document.getElementById("langBtn");
+      let isArabic = true;
+      langBtn.addEventListener("click", () => {
+        isArabic = !isArabic;
+        langBtn.textContent = isArabic ? "عربي" : "English";
       });
     });
   </script>
