@@ -1,59 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
+  <title>عنّي</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Sidebar -->
-  <div id="sidebar" class="sidebar">
-    <span id="closeBtn" class="closebtn">&times;</span>
-    <a href="index.html">🏠 Home</a>
-    <a href="about.html">👤 About</a>
-    <a href="index.html#skills">💡 Skills</a>
-    <a href="https://www.facebook.com/an.as.182828" target="_blank">📘 Facebook</a>
-    <a href="https://www.instagram.com/an0_0as31?igsh=YzljYTk1ODg3Zg==" target="_blank">📸 Instagram</a>
-    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank">▶️ YouTube</a>
+
+  <!-- زر القائمة -->
+  <button id="menuBtn">☰</button>
+
+  <!-- زر الترجمة -->
+  <div class="lang-switch">
+    <button id="langBtn">عربي</button>
   </div>
 
-  <!-- Menu button -->
-  <span id="menuBtn">&#9776; Menu</span>
+  <!-- القائمة الجانبية -->
+  <div id="sidebar" class="sidebar">
+    <span id="closeBtn" class="closebtn">&times;</span>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">عنّي</a>
+    <a href="index.html#skills">مهاراتي</a>
+    <hr style="margin:20px 0; border-color:#555;">
+    <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
+    <a href="https://www.instagram.com/an0_0as31" target="_blank"><i class="fab fa-instagram"></i> انستغرام</a>
+    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i> يوتيوب</a>
+  </div>
 
-  <!-- About Container -->
-  <div class="about-container">
+  <!-- محتوى about -->
+  <div class="about">
     <h2>About Me</h2>
     <p>soon... <span class="pen">✏️</span></p>
   </div>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuBtn = document.getElementById("menuBtn");
-      const sidebar = document.getElementById("sidebar");
-      const closeBtn = document.getElementById("closeBtn");
-
-      menuBtn.addEventListener("click", () => {
-        sidebar.style.width = "250px";
-      });
-
-      closeBtn.addEventListener("click", () => {
-        sidebar.style.width = "0";
-      });
-
-      // Close when clicking any link
-      document.querySelectorAll(".sidebar a").forEach(link => {
-        link.addEventListener("click", () => {
-          sidebar.style.width = "0";
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+    <p>تابعني على:</p>
+    <div>
+      <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/an0_0as31" target="_blank"><i class="fab fa-instagram"></i></a>
