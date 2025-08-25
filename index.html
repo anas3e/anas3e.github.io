@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anas - Personal Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <!-- زر القائمة -->
-  <div class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></div>
+  <div class="menu-btn" id="menuBtn">
+    <i class="fas fa-bars"></i>
+  </div>
 
   <!-- القائمة الجانبية -->
   <div class="sidebar" id="sidebar">
     <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
-    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="about.html"><i class="fas fa-user"></i> About Me</a>
-    <a href="#skills"><i class="fas fa-pen-nib"></i> My Skills</a>
-    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-    <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-    <a href="https://www.instagram.com/an0_0as31?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="about.html">More About Me</a>
+    <a href="#contact">Contact</a>
   </div>
 
   <header>
+    <div class="lang-switch">
+      <button id="langBtn">عربي</button>
+    </div>
     <div class="intro">
       <h1>Hi, I'm <span>Anas</span></h1>
       <p>Welcome to my personal website</p>
@@ -37,29 +44,27 @@
     </div>
   </header>
 
-  <!-- Skills Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Soon...</p>
+  </section>
+
   <section id="skills">
     <h2>My Skills</h2>
     <div class="cards">
       <div class="card">
-        <img src="images/photo1.jpg" alt="Photo Editing">
-        <h3>Photo Editing</h3>
-        <p>Expert in professional photo manipulation.</p>
+        <i class="fas fa-magic"></i>
+        <h3>Photo Retouching</h3>
+        <p>Professional photo retouching and enhancement.</p>
       </div>
       <div class="card">
-        <img src="images/photo2.jpg" alt="Retouching">
-        <h3>Retouching</h3>
-        <p>High-quality image retouching and enhancements.</p>
-      </div>
-      <div class="card">
-        <img src="images/photo3.jpg" alt="Creative Designs">
-        <h3>Creative Designs</h3>
-        <p>Designing visuals with advanced tools and creativity.</p>
+        <i class="fas fa-lightbulb"></i>
+        <h3>Creative Design</h3>
+        <p>Modern and elegant creative designs.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>You can reach me through my social media links above.</p>
@@ -71,12 +76,76 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+    const langBtn = document.getElementById("langBtn");
+    let isArabic = false;
+
+    const content = {
+      en: {
+        intro: "Hi, I'm <span>Anas</span>",
+        welcome: "Welcome to my personal website",
+        aboutTitle: "About Me",
+        aboutText: "Soon...",
+        skills: "My Skills",
+        skill1: "Photo Retouching",
+        skill1Text: "Professional photo retouching and enhancement.",
+        skill2: "Creative Design",
+        skill2Text: "Modern and elegant creative designs.",
+        contact: "Contact",
+        contactText: "You can reach me through my social media links above."
+      },
+      ar: {
+        intro: "مرحباً، أنا <span>أنس</span>",
+        welcome: "أهلاً بك في موقعي الشخصي",
+        aboutTitle: "من أنا",
+        aboutText: "قريباً...",
+        skills: "مهاراتي",
+        skill1: "معالجة الصور",
+        skill1Text: "تنقيح وتعديل الصور باحترافية.",
+        skill2: "تصميم إبداعي",
+        skill2Text: "تصاميم عصرية وأنيقة.",
+        contact: "تواصل",
+        contactText: "يمكنك التواصل معي عبر روابط التواصل أعلاه."
+      }
+    };
+
+    langBtn.addEventListener("click", () => {
+      isArabic = !isArabic;
+      const lang = isArabic ? "ar" : "en";
+      langBtn.textContent = isArabic ? "English" : "عربي";
+
+      document.querySelector(".intro h1").innerHTML = content[lang].intro;
+      document.querySelector(".intro p").textContent = content[lang].welcome;
+      document.querySelector("#about h2").textContent = content[lang].aboutTitle;
+      document.querySelector("#about p").textContent = content[lang].aboutText;
+      document.querySelector("#skills h2").textContent = content[lang].skills;
+      document.querySelectorAll("#skills .card h3")[0].textContent = content[lang].skill1;
+      document.querySelectorAll("#skills .card p")[0].textContent = content[lang].skill1Text;
+      document.querySelectorAll("#skills .card h3")[1].textContent = content[lang].skill2;
+      document.querySelectorAll("#skills .card p")[1].textContent = content[lang].skill2Text;
+      document.querySelector("#contact h2").textContent = content[lang].contact;
+      document.querySelector("#contact p").textContent = content[lang].contactText;
+    });
+  </script>
+  <script>
     const menuBtn = document.getElementById("menuBtn");
     const sidebar = document.getElementById("sidebar");
     const closeBtn = document.getElementById("closeBtn");
-    menuBtn.onclick = () => sidebar.style.width = "280px";
-    closeBtn.onclick = () => sidebar.style.width = "0";
-    window.onclick = (event) => { if(event.target == sidebar) sidebar.style.width = "0"; };
+
+    menuBtn.onclick = function () {
+      sidebar.style.width = "250px";
+    };
+
+    closeBtn.onclick = function () {
+      sidebar.style.width = "0";
+    };
+
+    window.onclick = function (event) {
+      if (event.target == sidebar) {
+        sidebar.style.width = "0";
+      }
+    };
   </script>
 </body>
 </html>
