@@ -79,7 +79,6 @@ body {
   padding: 10px 18px;
   border-radius: 25px;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 600;
   transition: 0.3s ease;
@@ -145,57 +144,5 @@ header p {
   color: #ccc;
 }
 
-/* === about page === */
-.about {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.about h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.about .pen {
-  font-size: 24px;          
-  margin-left: 8px;         
-  display: inline-block;
-  animation: float 1.2s ease-in-out infinite alternate; 
-  color: #22d3ee;   
-}
-
-@keyframes float {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-4px) rotate(-5deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-
-.soon-text {
-  font-weight: 600;
-  font-size: 1.4em;
-}
-
-/* === نافذة الترجمة المنبثقة === */
-#translation-toast {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ff4757;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 1000;
-}
-
-#translation-toast.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
+/* === نافذة الترحيب === */
+.custom-banner
