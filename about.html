@@ -61,5 +61,13 @@
       }
     };
   </script>
+  <script>
+  // إغلاق القائمة عند الضغط على أي رابط
+  document.querySelectorAll(".sidebar a").forEach(link => {
+    link.addEventListener("click", () => {
+      sidebar.style.width = "0";
+    });
+  });
+  </script>
 </body>
 </html>
