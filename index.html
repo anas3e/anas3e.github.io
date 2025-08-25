@@ -15,6 +15,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- زر القائمة -->
+<div class="menu-btn" id="menuBtn">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- القائمة الجانبية -->
+<div class="sidebar" id="sidebar">
+  <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</div>
   <header>
     <div class="lang-switch">
   <button id="langBtn">عربي</button>
@@ -125,5 +137,25 @@
     document.querySelector("#contact p").textContent = content[lang].contactText;
   });
         </script>
+  <script>
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebar = document.getElementById("sidebar");
+  const closeBtn = document.getElementById("closeBtn");
+
+  menuBtn.onclick = function() {
+    sidebar.style.width = "250px";
+  }
+
+  closeBtn.onclick = function() {
+    sidebar.style.width = "0";
+  }
+
+  // إغلاق القائمة إذا ضغط براها
+  window.onclick = function(event) {
+    if (event.target == sidebar) {
+      sidebar.style.width = "0";
+    }
+  }
+    </script>
 </body>
 </html>
