@@ -162,7 +162,6 @@ header p {
   display: inline-block;
   animation: float 1.2s ease-in-out infinite alternate; 
   color: #22d3ee;   
-  
 }
 
 @keyframes float {
@@ -174,7 +173,9 @@ header p {
 .soon-text {
   font-weight: 600;
   font-size: 1.4em;
-  /* نافذة الترجمة المنبثقة */
+}
+
+/* === نافذة الترجمة المنبثقة === */
 #translation-toast {
   position: fixed;
   bottom: 20px;
@@ -193,10 +194,8 @@ header p {
   z-index: 1000;
 }
 
-/* عند ظهورها */
 #translation-toast.show {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
-
-} 
+}
