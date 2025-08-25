@@ -1,77 +1,18 @@
-/* ========== Reset ========== */
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #141e30, #243b55);
-  color: white;
+  background: #f4f6f9;
+  color: #333;
   line-height: 1.6;
-  min-height: 100vh;
 }
 
-/* ========== Header ========== */
-header {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-}
-
-header h1 {
-  font-size: 3em;
-}
-
-header h1 span {
-  color: #22d3ee;
-}
-
-header p {
-  margin-top: 10px;
-  font-size: 1.2em;
-}
-
-.social {
-  margin-top: 20px;
-}
-
-.social a {
-  color: white;
-  margin: 0 10px;
-  font-size: 1.5em;
-  transition: 0.3s;
-}
-
-.social a:hover {
-  color: #22d3ee;
-  transform: scale(1.2);
-}
-
-/* ========== Sidebar Menu ========== */
-.menu-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1001;
-  font-size: 25px;
-  background: #333;
-  color: white;
-  padding: 10px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.menu-btn:hover {
-  background: #555;
-  transform: scale(1.1);
-}
-
+/* === SIDEBAR === */
 .sidebar {
   height: 100%;
   width: 0;
@@ -87,156 +28,133 @@ header p {
   border-bottom-right-radius: 20px;
   box-shadow: 5px 0 20px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-} 
-  
+}
 
 .sidebar a {
-  padding: 15px 25px;
+  padding: 12px 25px;
   text-decoration: none;
   font-size: 18px;
   color: #f1f1f1;
   display: flex;
   align-items: center;
-  gap: 10px;
   transition: 0.3s;
 }
 
-.sidebar a i {
-  font-size: 20px;
-  color: #22d3ee;
-}
-
 .sidebar a:hover {
-  background: #334155;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   padding-left: 35px;
 }
 
 .sidebar .closebtn {
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 20px;
-  font-size: 35px;
-  cursor: pointer;
+  font-size: 28px;
   color: #fff;
-}
-
-/* ========== Language Switch ========== */
-.lang-switch {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.lang-switch button {
-  background: #ff4757;
-  color: #fff;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 25px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  transition: 0.3s ease;
 }
 
-.lang-switch button:hover {
-  background: #3742fa;
-  transform: scale(1.1) rotate(-2deg);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+/* === MENU BUTTON === */
+#menuBtn {
+  font-size: 26px;
+  cursor: pointer;
+  color: #333;
+  padding: 10px 20px;
 }
 
-/* ========== Sections ========== */
-section {
-  padding: 60px 20px;
+/* === HEADER === */
+.header {
   text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  border-radius: 0 0 25px 25px;
 }
 
-section h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #22d3ee;
+.header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
 }
 
-/* ========== Skills Cards ========== */
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* === SKILLS SECTION === */
+.skills {
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-.card {
-  background: #1e293b;
+.skill-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 25px;
-  border-radius: 15px;
-  width: 250px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.card img {
+.skill-card img {
   width: 60px;
+  height: 60px;
   margin-bottom: 15px;
 }
 
-.card h3 {
-  font-size: 1.3em;
+.skill-card h3 {
+  font-size: 20px;
   margin-bottom: 10px;
-  color: #22d3ee;
+  color: #444;
 }
 
-.card p {
-  font-size: 0.95em;
-  color: #d1d5db;
+.skill-card p {
+  font-size: 14px;
+  color: #666;
 }
 
-/* ========== About Page ========== */
-.about-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.about-container h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #22d3ee;
-}
-
-.soon-text {
-  font-size: 1.5em;
-  color: #e2e8f0;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.soon-text i {
-  font-size: 1.3em;
-  animation: writing 1.5s infinite alternate;
-  color: #22d3ee;
-}
-
-@keyframes writing {
-  from { transform: translateX(0); }
-  to { transform: translateX(5px); }
-}
-
-/* ========== Footer ========== */
+/* === FOOTER === */
 footer {
   text-align: center;
   padding: 20px;
-  background: #0f172a;
-  font-size: 0.9em;
-  color: #94a3b8;
+  background: #222;
+  color: #ccc;
+  border-top: 4px solid #2575fc;
+}
+
+/* === ABOUT PAGE === */
+.about-container {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.about-container h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  font-size: 22px;
+  color: #555;
+}
+
+/* === PEN ICON ANIMATION === */
+.pen {
+  display: inline-block;
+  font-size: 26px;
+  margin-left: 10px;
+  animation: wiggle 1s infinite alternate;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(20deg); }
 }
