@@ -1,73 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Anas</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- القائمة الجانبية -->
-  <div class="menu-btn" id="menuBtn">
-    <i class="fas fa-bars"></i>
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <span id="closeBtn" class="closebtn">&times;</span>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">👤 About</a>
+    <a href="index.html#skills">💡 Skills</a>
+    <a href="https://www.facebook.com/an.as.182828" target="_blank">📘 Facebook</a>
+    <a href="https://www.instagram.com/an0_0as31?igsh=YzljYTk1ODg3Zg==" target="_blank">📸 Instagram</a>
+    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank">▶️ YouTube</a>
   </div>
 
-  <div class="sidebar" id="sidebar">
-    <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#skills">Skills</a>
-    <a href="about.html">More About Me</a>
-    <a href="index.html#contact">Contact</a>
-  </div>
+  <!-- Menu button -->
+  <span id="menuBtn">&#9776; Menu</span>
 
-  <section class="about-page">
+  <!-- About Container -->
+  <div class="about-container">
     <h2>About Me</h2>
-    <div class="soon">
-      <i class="fas fa-pen-nib fa-bounce"></i>
-      <p>Soon...</p>
-    </div>
-  </section>
+    <p>soon... <span class="pen">✏️</span></p>
+  </div>
 
+  <!-- Footer -->
   <footer>
-    <p>© <span id="year"></span> Anas - All Rights Reserved</p>
+    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("sidebar");
+      const closeBtn = document.getElementById("closeBtn");
 
-    const menuBtn = document.getElementById("menuBtn");
-    const sidebar = document.getElementById("sidebar");
-    const closeBtn = document.getElementById("closeBtn");
+      menuBtn.addEventListener("click", () => {
+        sidebar.style.width = "250px";
+      });
 
-    menuBtn.onclick = function () {
-      sidebar.style.width = "250px";
-    };
-
-    closeBtn.onclick = function () {
-      sidebar.style.width = "0";
-    };
-
-    window.onclick = function (event) {
-      if (event.target == sidebar) {
+      closeBtn.addEventListener("click", () => {
         sidebar.style.width = "0";
-      }
-    };
-  </script>
-  <script>
-  // إغلاق القائمة عند الضغط على أي رابط
-  document.querySelectorAll(".sidebar a").forEach(link => {
-    link.addEventListener("click", () => {
-      sidebar.style.width = "0";
+      });
+
+      // Close when clicking any link
+      document.querySelectorAll(".sidebar a").forEach(link => {
+        link.addEventListener("click", () => {
+          sidebar.style.width = "0";
+        });
+      });
     });
-  });
   </script>
 </body>
 </html>
