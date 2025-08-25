@@ -32,6 +32,7 @@
   <!-- الهيدر -->
   <header>
     <h1>أهلاً بكم في موقعي</h1>
+    <p>anas</p>
     <p>مصمم و محرر صور محترف</p>
   </header>
 
@@ -71,6 +72,7 @@
 
   <!-- نافذة الترحيب الخاصة بك -->
   <div id="custom-banner" class="custom-banner">
+    <span id="close-banner" class="close-btn">&times;</span>
     الحمد لله الذي بنعمته تتم الصالحات<br>
     بفضل الله وبفضل جهودي ومساعدة <span class="highlight">ChatGPT</span> للامانة استطعت برمجة أول موقع إلكتروني خاص بي
   </div>
@@ -78,24 +80,24 @@
   <!-- سكريبتات التحكم -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // القائمة الجانبية
       const menuBtn = document.getElementById("menuBtn");
       const sidebar = document.getElementById("sidebar");
       const closeBtn = document.getElementById("closeBtn");
 
       menuBtn.addEventListener("click", () => { sidebar.style.width = "250px"; });
       closeBtn.addEventListener("click", () => { sidebar.style.width = "0"; });
+
       document.querySelectorAll(".sidebar a").forEach(link => {
         link.addEventListener("click", () => { sidebar.style.width = "0"; });
       });
 
-      // زر الترجمة + نافذة الترجمة المنبثقة
       const langBtn = document.getElementById("langBtn");
       let isArabic = true;
       langBtn.addEventListener("click", () => {
         isArabic = !isArabic;
         langBtn.textContent = isArabic ? "عربي" : "English";
 
+        // نافذة الترجمة المنبثقة
         const toast = document.getElementById("translation-toast");
         toast.classList.add("show");
         setTimeout(() => { toast.classList.remove("show"); }, 3000);
@@ -103,8 +105,10 @@
 
       // نافذة الترحيب
       const banner = document.getElementById("custom-banner");
+      const closeBanner = document.getElementById("close-banner");
       banner.classList.add("show");
       setTimeout(() => { banner.classList.remove("show"); }, 30000);
+      closeBanner.addEventListener("click", () => { banner.classList.remove("show"); });
     });
   </script>
 
