@@ -6,6 +6,9 @@
   <title>anas.com</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- خطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Montserrat:wght@600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -26,91 +29,46 @@
     <hr style="margin:20px 0; border-color:#555;">
     <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
     <a href="https://www.instagram.com/an0_0as31" target="_blank"><i class="fab fa-instagram"></i> انستغرام</a>
-    <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i> يوتيوب</a>
+    <a href="https://youtube.com/@anas_inspirex" target="_blank"><i class="fab fa-youtube"></i> يوتيوب</a>
   </div>
 
   <!-- الهيدر -->
   <header>
-    <h1>أهلاً بكم في موقعي</h1>
-    <p>anas</p>
-    <p>مصمم و محرر صور محترف</p>
+    <h1 id="title">أهلاً بكم في موقعي</h1>
+    <p id="subtitle">مصمم ومحرر صور محترف</p>
   </header>
 
   <!-- قسم المهارات -->
   <section id="skills" class="skills">
     <div class="skill-card">
       <i class="fa-solid fa-wand-magic-sparkles"></i>
-      <h3>Retouching</h3>
-      <p>تعديل الصور باحترافية</p>
+      <h3 id="skill1-title">تعديل الصور</h3>
+      <p id="skill1-desc">إضفاء لمسة احترافية على الصور</p>
     </div>
     <div class="skill-card">
       <i class="fa-solid fa-scissors"></i>
-      <h3>Editing</h3>
-      <p>مونتاج وتحرير</p>
+      <h3 id="skill2-title">مونتاج</h3>
+      <p id="skill2-desc">تحرير ومونتاج فيديو</p>
     </div>
     <div class="skill-card">
       <i class="fa-solid fa-pen-nib"></i>
-      <h3>Creative Design</h3>
-      <p>تصاميم إبداعية</p>
+      <h3 id="skill3-title">تصميم إبداعي</h3>
+      <p id="skill3-desc">أفكار وتصاميم مميزة</p>
     </div>
   </section>
 
   <!-- الفوتر -->
   <footer>
-    <p>تابعني على:</p>
-    <div>
+    <p class="follow-text" id="follow-text">تابعني على:</p>
+    <div class="social-links">
       <a href="https://www.facebook.com/an.as.182828" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/an0_0as31" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@anas_inspirex?si=5lIUmbRtCq3tukMm" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://youtube.com/@anas_inspirex" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
   </footer>
 
-  <!-- نافذة الترجمة المنبثقة -->
-  <div id="translation-toast" class="toast">
-    عذراً، الميزة غير متوفرة حالياً. سأعمل على تطويرها.
-  </div>
-
-  <!-- نافذة الترحيب الخاصة بك -->
-  <div id="custom-banner" class="custom-banner">
-    <span id="close-banner" class="close-btn">&times;</span>
-    الحمد لله الذي بنعمته تتم الصالحات<br>
-    بفضل الله وبفضل جهودي ومساعدة <span class="highlight">ChatGPT</span> للامانة استطعت برمجة أول موقع إلكتروني خاص بي
-  </div>
-
-  <!-- سكريبتات التحكم -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuBtn = document.getElementById("menuBtn");
-      const sidebar = document.getElementById("sidebar");
-      const closeBtn = document.getElementById("closeBtn");
-
-      menuBtn.addEventListener("click", () => { sidebar.style.width = "250px"; });
-      closeBtn.addEventListener("click", () => { sidebar.style.width = "0"; });
-
-      document.querySelectorAll(".sidebar a").forEach(link => {
-        link.addEventListener("click", () => { sidebar.style.width = "0"; });
-      });
-
-      const langBtn = document.getElementById("langBtn");
-      let isArabic = true;
-      langBtn.addEventListener("click", () => {
-        isArabic = !isArabic;
-        langBtn.textContent = isArabic ? "عربي" : "English";
-
-        // نافذة الترجمة المنبثقة
-        const toast = document.getElementById("translation-toast");
-        toast.classList.add("show");
-        setTimeout(() => { toast.classList.remove("show"); }, 3000);
-      });
-
-      // نافذة الترحيب
-      const banner = document.getElementById("custom-banner");
-      const closeBanner = document.getElementById("close-banner");
-      banner.classList.add("show");
-      setTimeout(() => { banner.classList.remove("show"); }, 30000);
-      closeBanner.addEventListener("click", () => { banner.classList.remove("show"); });
-    });
-  </script>
+  <!-- سكربت -->
+  <script src="script.js"></script>
 
 </body>
 </html>
