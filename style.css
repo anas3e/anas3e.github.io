@@ -1,236 +1,140 @@
-/* === RESET === */
-* {
+/* خلفية تقنية حيوية */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  background: linear-gradient(to right, #141e30, #243b55);
-  color: white;
-  line-height: 1.6;
-}
-
-/* === القائمة الجانبية === */
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(30,30,30,0.95);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  font-family: 'Cairo', sans-serif;
+  min-height: 100vh;
+  position: relative;
   overflow-x: hidden;
-  transition: 0.4s ease-in-out;
-  padding-top: 60px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 5px 0 20px rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
 }
 
-.sidebar a {
-  padding: 12px 30px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #fff;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  background: #444;
-  border-radius: 8px;
-}
-
-.sidebar .closebtn {
+/* تأثير مربعات */
+body::before {
+  content: "";
   position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 30px;
-  cursor: pointer;
-  color: #fff;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: linear-gradient(#ffffff1a 1px, transparent 1px),
+                    linear-gradient(90deg, #ffffff1a 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* عناصر فوق الخلفية */
+header, section, footer, .sidebar, .lang-switch, #menuBtn, main {
+  position: relative;
+  z-index: 1;
 }
 
 /* زر القائمة */
 #menuBtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
   font-size: 26px;
-  cursor: pointer;
-  padding: 10px 15px;
-  background: #222;
+  background: #111;
   color: #fff;
   border: none;
-  border-radius: 8px;
-  margin: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* القائمة الجانبية */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidebar a {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #bbb;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a:hover { color: #fff; }
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
 }
 
 /* زر الترجمة */
 .lang-switch {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
 }
-
-.lang-switch button {
-  background: #ff4757;
+#langBtn {
+  background: #00c6ff;
   color: #fff;
   border: none;
-  padding: 10px 18px;
-  border-radius: 25px;
+  padding: 8px 14px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  transition: 0.3s ease;
+  font-weight: bold;
+  border-radius: 6px;
 }
 
-.lang-switch button:hover {
-  background: #3742fa;
-  transform: scale(1.1) rotate(-2deg);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* === الهيدر === */
-header {
-  text-align: center;
-  padding: 60px 20px 40px;
-}
-
-header h1 {
-  font-size: 36px;
-}
-
-header p {
-  font-size: 18px;
-  color: #ccc;
-}
-
-/* === قسم المهارات === */
+/* البطاقات */
 .skills {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 20px;
-  padding: 40px 20px;
+  flex-wrap: wrap;
+  margin: 40px 0;
 }
-
 .skill-card {
-  background: #1e293b;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  padding: 25px;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
   width: 250px;
-  text-align: center;
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,255,255,0.3);
 }
-
-.skill-card:hover {
-  transform: translateY(-8px);
-}
-
 .skill-card i {
-  font-size: 40px;
-  margin-bottom: 15px;
-  color: #22d3ee;
-}
-
-.skill-card h3 {
-  margin: 10px 0;
-  font-size: 20px;
-}
-
-.skill-card p {
-  font-size: 14px;
-  color: #ccc;
-}
-
-/* === about page === */
-.about {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.about h2 {
   font-size: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  color: #0ff;
 }
 
-.about .pen {
-  font-size: 24px;
-  margin-left: 8px;
-  display: inline-block;
-  animation: float 1.2s ease-in-out infinite alternate;
-  color: #22d3ee;
-}
-
-@keyframes float {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-4px) rotate(-5deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-
-.soon-text {
-  font-weight: 600;
-  font-size: 1.4em;
-}
-
-/* === نافذة الترجمة المنبثقة === */
-#translation-toast {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ff4757;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 1000;
-}
-
-#translation-toast.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-/* === نافذة الترحيب === */
-.custom-banner {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(30,30,30,0.95);
-  color: white;
-  padding: 25px 35px;
-  border-radius: 15px;
+/* نصوص الفوتر */
+footer {
   text-align: center;
-  font-size: 16px;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  padding: 20px 0;
 }
-
-.custom-banner.show {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.custom-banner .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
+footer .follow-text {
   font-size: 20px;
-  color: #ff4757;
+  font-weight: bold;
+  margin: 15px 0;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+footer .social-links a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #fff;
+  transition: 0.3s;
+}
+footer .social-links a:hover {
+  color: #0ff;
 }
 
-.custom-banner .highlight {
-  color: #22d3ee;
-  font-weight: 600;
+@keyframes glow {
+  from { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+  to   { text-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
 }
